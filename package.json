@@ -1,0 +1,18 @@
+{
+  "name": "restfull_birdblog",
+  "version": "1.0.0",
+  "description": "just a test for restfull routes",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ravi Campos",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "express-sanitizer": "^1.0.5",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.9.16"
+  }
+}

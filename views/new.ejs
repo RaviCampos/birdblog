@@ -1,0 +1,22 @@
+<%- include("./partials/head.ejs") %>
+
+<div class="ui inverted segment container text">
+    <div class="ui huge header">New post</div>
+    <form action="/birdblog" method="POST" class="ui form inverted">
+        <div class="field">
+            <label>Title</label>
+            <input type="text" name="blog[title]">
+        </div>
+        <div class="field">
+            <label>Image url</label>
+            <input type="text" name="blog[image]">
+        </div>
+        <div class="field">
+            <label>What do you have to say?</label>
+            <textarea name="blog[body]"></textarea>
+        </div>
+        <button type="submit" class="ui inverted yellow button">Submit</button>
+    </form>
+</div>
+
+<%- include("./partials/footer.ejs") %>

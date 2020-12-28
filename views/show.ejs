@@ -1,0 +1,21 @@
+<%- include("./partials/head.ejs") %>
+
+
+<div class="ui inverted segment container text">
+    <div class="ui huge header"><%= blog.title %></div>
+    <div class="segment inverted">
+        <img class="ui centered rounded image"src="<%= blog.image %>" alt="blog image">
+        <br><span><%= new Date(blog.created).toDateString() %></span>
+        <p><%- blog.body %></p>
+        <a href="/birdblog/<%= blog._id %>/edit"><button class="ui pink button">Edit</button></a>
+        <form id="side" action="/birdblog/<%= blog._id %>?_method=DELETE" method="POST">
+            <button class="ui red button">Delete</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+<%- include("./partials/footer.ejs") %>

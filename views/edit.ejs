@@ -1,0 +1,31 @@
+<%- include("./partials/head.ejs") %>
+
+<div class="ui segment container text">
+    <div class="ui huge header">Edit blog</div>
+    <!-- the actin overrite the POST to PUT (method-override package/library) -->
+    <form action="/birdblog/<%= blog._id %>?_method=PUT" method="POST" class="ui form">
+        <div class="field">
+            <label>Title</label>
+            <!--
+            => input is using blog.title as a variable from ejs in value atr, ejs <percent to evaluate,
+               sent trough the edit route
+            => making the name of the body of the PUT method that is being constructed in the form
+               to be blog[title], blog[title] is not beeing evalueted by js logic,
+               it will be meaninful once evaluated by the body-parser in the server after the 
+               form is sent with put method
+            -->
+            <input type="text" name="blog[title]" value="<%= blog.title %>">
+        </div>
+        <div class="field">
+            <label>Image url</label>
+            <input type="text" name="blog[image]"  value="<%= blog.image %>">
+        </div>
+        <div class="field">
+            <label>What do you have to say?</label>
+            <textarea name="blog[body]"><%- blog.body %></textarea>
+        </div>
+        <button type="submit" class="ui pink button">Submit</button>
+    </form>
+</div>
+
+<%- include("./partials/footer.ejs") %>

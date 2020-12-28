@@ -1,0 +1,31 @@
+<%- include("./partials/head.ejs")%>
+
+<div class="ui main container">
+    <div class="ui huge header">Restful Bird Blog</div>
+    <div class="ui top segment">
+        <div class="ui divided items">
+            <% blogs.forEach(blog => {%>
+                <div class="item">
+                    <div class="image">
+                        <img src="<%= blog.image %>" alt="blog image">
+                    </div>
+                    <div class="content">
+                        <h2 class="header"><%= blog.title %></h2>
+                        <div class="meta">
+                            <span><%= new Date(blog.created).toDateString() %></span>
+                        </div>
+                        <div class="description">
+                            <p><%- blog.body.match(/^.{50}.*? /) %>...</p>
+                        </div>
+                        <div class="extra">
+                            <a href="/birdblog/<%= blog._id %>"><buton class="ui purple button">More</buton></a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+
+<%- include("./partials/footer.ejs")%>
