@@ -4,7 +4,8 @@
   "description": "just a test for restfull routes",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devserver": "nodemon app.js"
   },
   "author": "Ravi Campos",
   "license": "ISC",
@@ -13,6 +14,7 @@
     "express": "^4.17.1",
     "express-sanitizer": "^1.0.5",
     "method-override": "^3.0.0",
-    "mongoose": "^5.11.9"
+    "mongoose": "^5.11.9",
+    "nodemon": "^2.0.6"
   }
 }
